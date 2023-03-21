@@ -1,0 +1,15 @@
+<p>led works!</p>
+
+<p>
+    Index: {{ led.index + 1 }}
+</p>
+
+<div (click)="handleClick($event)" class="box" [style.background-color]="led.color" >
+
+</div>
+
+<p>
+    {{ led.color | invColor: 'hex6' }}
+</p>
+
+<pre><code>{{ led | json }}</code></pre>
