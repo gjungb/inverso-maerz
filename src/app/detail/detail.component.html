@@ -1,0 +1,9 @@
+<p>detail works!</p>
+
+<ng-container *ngIf="led$ | async as led; else loading">
+  <inv-led [invLed]="led"></inv-led>
+</ng-container>
+
+<ng-template #loading>
+  <p>Bin am Laden ...</p>
+</ng-template>

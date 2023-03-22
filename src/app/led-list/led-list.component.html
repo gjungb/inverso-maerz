@@ -1,12 +1,18 @@
 <p>led-list works!</p>
 
-<table>
-    <tbody>
-        <tr>
-            <td *ngFor="let thing of leds">
-                <button (click)="setRandomColor(thing.index)">Random</button>
-                <inv-led (colorChange)="setRandomColor($event)" [invLed]="thing"></inv-led>
-            </td>
-        </tr>
-    </tbody>
+<table *ngIf="leds$ | async as things">
+  <tbody>
+    <tr>
+      <td *ngFor="let thing of things">
+        <p>
+          <a [routerLink]="thing.index + ''">Details</a>
+        </p>
+        <button (click)="setRandomColor(thing.index)">Random</button>
+        <inv-led
+          (colorChange)="setRandomColor($event)"
+          [invLed]="thing"
+        ></inv-led>
+      </td>
+    </tr>
+  </tbody>
 </table>
