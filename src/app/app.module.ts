@@ -12,6 +12,8 @@ import { BASE_URL } from './di';
 import { LedListComponent } from './led-list/led-list.component';
 import { LedComponent } from './led/led.component';
 import { InvColorPipe } from './shared/inv-color.pipe';
+import { LedService } from './shared/led.service';
+import { LedStubService } from './stubs/led-stub.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,10 @@ import { InvColorPipe } from './shared/inv-color.pipe';
       provide: BASE_URL,
       useValue:
         'https://347eb1836965ec040f474bd7f78d4730.balena-devices.com/api',
+    },
+    {
+      provide: LedService,
+      useClass: LedStubService,
     },
   ],
   bootstrap: [AppComponent],

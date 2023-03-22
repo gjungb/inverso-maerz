@@ -34,21 +34,6 @@ export class LedService {
       map((colors) => this.toLeds(colors)),
       delay(due)
     );
-
-    // return of([
-    //   {
-    //     index: 0,
-    //     color: 'red'
-    //   },
-    //   {
-    //     index: 1,
-    //     color: 'green'
-    //   },
-    //   {
-    //     index: 2,
-    //     color: 'blue'
-    //   }
-    // ]).pipe(delay(5000));
   }
 
   /**
